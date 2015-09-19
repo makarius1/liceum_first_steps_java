@@ -1,12 +1,62 @@
-*.class
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package j1;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+/**
+ *Бесполкзный класс
+ * @author Adler Fogel
+ */
+public class J1 {
 
-# Package Files #
-*.jar
-*.war
-*.ear
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+       //Vector v1 = new Vector(1,2);
+       //Vector v2 = new Vector(5,6);
+       //Vector v3 = v1.plus(v2);
+      //Vector v4 = v2.plus(v1);
+      
+       test();
+       }
+    /**
+     * Test
+     */
+    public static void test(){
+        boolean equalsI0k = true;
+        for(int i = -10; i<= 10; i++){
+            for(int j = -10 ; j<= 10; j++){
+                Vector v1 = new Vector(i,j);
+                Vector v2 = new Vector(i,j);
+                Vector v3 = v1.plus(v2);
+                Vector v4 = v1.plus_modul(v2);
+                equalsI0k = false;
+                
+                }
+            }
+        
+    if (Vector(v3) >= Vector(v4)) {
+        System.out.println("Сумма Дно");
+    } else {
+        System.out.println("Cумма норм");
+    }
+    }
+}
+     
+    
+/*}*/
+       
+       
+       
+           
+       
+       
+       
+       
+       
+    
+    
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
