@@ -1,0 +1,74 @@
+package j1;
+
+public class J1 {
+
+    public static void main(String[] args) {
+       test_plus();// включается тестирующая программа
+
+    }
+    
+    public static void test(){
+        boolean equalsIsOk = true;// задаём логическую переменную
+        for (int i = -100; i <= 100; i++){
+            for (int j = -100; j <= 100; j++){
+                Vector v1 = new Vector(i,j);// присваиваем координаты вектору
+                Vector v2 = new Vector(i,j);// присваиваем координаты вектору так, что 2 вектора равны
+                if(!v1.equals(v2)){
+                    equalsIsOk = false;// проверяем, равны ли вектора
+                }
+            }
+        }
+        if(equalsIsOk){
+            System.out.println("Ok");// выводим результат на экран
+        }
+        else{
+            System.out.println("No");// выводим результат на экран
+        }
+    }
+    public static void test_plus(){//// создаём программу тестирующую функцию plus
+        boolean plusIsOk = true;////задаём логическую переменную
+        for(int i = -100; i<= 100; i++){
+            for (int j = -100; j <= 100; j++){
+                Vector v1 = new Vector(i,j);/// задаём координаты вектора
+                Vector v2 = new Vector( -1 *i , -1 * j);//// обратные координаты векторов (1 и -1)
+                Vector v3 = v1.plus(v2);// записываем в другой вектор результат сложения
+                if((v3.i!= 0) || (v3.j != 0)){
+                    plusIsOk = false;/// если не равен 0, то фолс, т.к. 1 - 1 = 0.
+                }
+            }
+        }
+        if(plusIsOk){
+            System.out.println("Plus works well");// выводим результат программы на экран
+        }
+        else{
+            System.out.println("Plus works bed");//  выводим результат программы на экран
+        }
+    }
+    
+}
+
+    
+    public class Vector {
+    public float i = 0.f;
+    public float j = 0.f;
+     /*
+    конструктор вектора
+    */
+    public Vector(float i, float j){
+          this.i = i;
+          this.j = j;  
+    }
+    
+    public Vector plus(Vector x){
+        float i, j;
+        Vector v3 = new Vector(this.i+x.i, this.j + x.j);
+        return v3;
+    }
+    
+    public boolean equals (Vector x){
+        boolean result = false;
+        if ((this.i == x.i) && (this.j == x.j)){
+            result = true;
+        }
+        return result;
+    }
