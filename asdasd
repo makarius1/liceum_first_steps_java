@@ -1,0 +1,70 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package asdasd;
+
+/**
+ *
+ * @author Макар
+ */
+public class Asdasd {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        test_add();
+        // TODO code application logic here
+    }
+    public static void test_add(){
+        boolean function = true; // переменная 
+        // задаем переменные
+        for (int i = -100; i <= 100; i++){ 
+            for (int g = -100; 100<= g; g++){
+                Vector v1 = new Vector(i,g);// координаты вектора
+                Vector v2 = new Vector (-1 * i, -1 * g); // обратные координаты
+                Vector v3 = v1.add(v2); // сложение векторов
+            if (( v3.i !=0) || (v3.g != 0)){
+                function = false; // если не равно 0 то неправильно
+            
+            }
+        }
+    }       
+        if (function){
+           System.out.println("+"); // результат
+    }
+        else {
+            System.out.println("-");
+        }
+        }
+                
+            }
+    
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Vector;
+
+/**
+ *
+ * @author Макар
+ */
+public class Vector {
+    public float i = 0.f;
+    public float g = 0.f;
+    
+    public Vector ( float i, float g)
+    {    
+        this.i = i;
+        this.g = g;
+    }    
+    public Vector add (Vector x)
+    {
+         return new Vector(this.i + x.i, this.g + x.g);
+    }
+}
